@@ -79,7 +79,7 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    Laravel ss
+                    Yanice is Leuk
                 </div>
 
                 <div class="links">
