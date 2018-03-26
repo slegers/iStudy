@@ -15,6 +15,11 @@ Route::get('/', function () {
     return view('auth.login');
 });
 
+Route::get('/course/add', function (){
+    return view('enroll');
+});
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
