@@ -61,7 +61,7 @@
                             </div>
                         </div>
                         <div class="form-group row">
-                            <label for="gdpr" class="col-md-4 col-form-label text-md-right">{{ __('Accept the GDPR policy') }}</label>
+                            <label for="gdpr-checkbox" class="col-md-4 col-form-label text-md-right">{{ __('Accept the GDPR policy') }}</label>
 
                             <div class="col-md-6">
                                 <input id="gdpr-checkbox" type="checkbox" class="form-control" name="gdpr">
