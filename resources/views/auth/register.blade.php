@@ -60,11 +60,18 @@
                                 <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required>
                             </div>
                         </div>
+                        
                         <div class="form-group row">
                             <label for="gdpr-checkbox" class="col-md-4 col-form-label text-md-right">{{ __('Accept the GDPR policy') }}</label>
 
                             <div class="col-md-6">
-                                <input id="gdpr-checkbox" type="checkbox" class="form-control" name="gdpr">
+                                <input id="gdpr-checkbox" type="checkbox" class="form-control {{ $errors->has('gdpr') ? ' is-invalid' : '' }}" name="gdpr">
+                               
+                                @if ($errors->has('gdpr'))
+                                    <span class="invalid-feedback">
+                                        <strong>{{ $errors->first('gdpr')  }}</strong>
+                                    </span>
+                                @endif
                             </div>
                         </div>
                         <div class="form-group row mb-0">
