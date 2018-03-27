@@ -17,6 +17,10 @@ Route::get('/course/add', function (){
     return view('enroll');
 });
 
+Route::get('/studymoment/add',function(){
+    return view('studymoment');
+});
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
