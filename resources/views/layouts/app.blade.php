@@ -53,20 +53,19 @@
                                 </a>
 
                                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="{{ route('logout') }}"
-                                       onclick="logoutFunc">
-                                        {{ __('Logout') }}
-                                    </a>
-                                    
-                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                        @csrf
-                                    </form>
                                     <a class="dropdown-item" href="{{ route('profile') }}"
                                        onclick="profile">
                                         {{ __('Profile') }}
                                     </a>
-                                    
                                     <form id="profile-form" action="{{ route('profile') }}" method="POST" style="display: none;">
+                                        @csrf
+                                    </form>
+                                    <a class="dropdown-item" href="{{ route('logout') }}"
+                                       onclick="logoutFunc()">
+                                        {{ __('Logout') }}
+                                    </a>
+                                    
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                         @csrf
                                     </form>
                                 </div>

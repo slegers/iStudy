@@ -20,8 +20,10 @@ Route::get('/course/add', function (){
 Route::get('/studymoment/add',function(){
     return view('studymoment');
 });
+Route::get('/profile', 'UserController@index')->name('profile');
 
-Route::get('/profile', function(){
+
+Route::post('/profile', function(){
     return view('enroll');
 });
 Auth::routes();
