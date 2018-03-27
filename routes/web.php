@@ -11,9 +11,7 @@
 |
 */
 
-Route::get('/', function () {
-    return view('auth.login');
-});
+Route::get('/','Auth\LoginController@index');
 
 Route::get('/course/add', function (){
     return view('enroll');
