@@ -27,3 +27,12 @@
     right: 20px;
     top: -20px;
 }
+.btn-delete{
+    color:#fff;
+    background-color:red;
+    border-color:red;
+}
+.btn-delete:hover{
+    background-color:red;
+    border-color:red;
+}

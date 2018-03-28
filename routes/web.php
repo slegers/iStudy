@@ -20,6 +20,7 @@ Route::get('/course/add', function (){
 Route::get('/studymoment/add',function(){
     return view('studymoment');
 })->name('add_studymoment');
+
 Route::get('/profile', 'UserController@index')->name('profile');
 
 
