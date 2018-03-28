@@ -15,11 +15,11 @@ Route::get('/','Auth\LoginController@index');
 
 Route::get('/course/add', function (){
     return view('enroll');
-});
+})->name('add_course');;
 
 Route::get('/studymoment/add',function(){
     return view('studymoment');
-});
+})->name('add_studymoment');
 Route::get('/profile', 'UserController@index')->name('profile');
 
 
