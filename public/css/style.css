@@ -1,3 +1,29 @@
 #gdpr-checkbox{
     margin-top: 4%;
 }
+
+.card-body-icon {
+    position: absolute;
+    z-index: 0;
+    top: -25px; 
+    right: 0px;
+    font-size: 5rem;
+}
+
+.bg-red{
+    background: red;
+}
+
+.bg-yellow{
+    background: #ffc200;
+}
+
+.bg-green{
+    background: green;
+}
+
+.card-body-icon{
+    margin-left: 20px;
+    right: 20px;
+    top: -20px;
+}
