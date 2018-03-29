@@ -15,8 +15,9 @@ class Course extends Migration
     {
         Schema::create('Course', function (Blueprint $table) {
             $table->increments('id');
-            $table->varchar('name');
-            $table->varchar('semester');
+            $table->string('name',50);
+            $table->string('semester',1);
+            $table->boolean('visible');
             $table->timestamps();
         });
     }
