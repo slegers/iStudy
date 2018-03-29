@@ -3,9 +3,17 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Auth;
 
 class CourseController extends Controller
 {
+
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -13,7 +21,7 @@ class CourseController extends Controller
      */
     public function index()
     {
-        //
+        return view('home');
     }
 
     /**
@@ -22,8 +30,8 @@ class CourseController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function create()
-    {
-        //
+    {  
+        return view('enroll');
     }
 
     /**
@@ -34,7 +42,21 @@ class CourseController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $id = DB::table('courses')->insertGetId(
+            [
+             'name' => $request['name'],
+             'semester' => $request['semester'],
+             'visible' => 1,             
+             'studypoints' => $request['studypoints']
+             ]
+        );
+        DB::table('user_enrolled_at')->insertGetId(
+            [
+                'user_id' => Auth::id(),
+                'course_id' => $id, 
+            ]
+        );
+        return $this->index();
     }
 
     /**
@@ -45,7 +67,7 @@ class CourseController extends Controller
      */
     public function show($id)
     {
-        //
+    
     }
 
     /**
@@ -68,7 +90,7 @@ class CourseController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+       
     }
 
     /**
@@ -79,6 +101,6 @@ class CourseController extends Controller
      */
     public function destroy($id)
     {
-        //
+        
     }
 }

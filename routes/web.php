@@ -15,9 +15,11 @@ Route::get('/','Auth\LoginController@index');
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::get('/course/add', 'CourseController@edit')->name('add_course');;
+Route::get('/course/add', 'CourseController@create')->name('course.create');;
 
-Route::get('/studymoment/add','StudymomentController@edit')->name('add_studymoment');
+Route::post('Course/insert', 'CourseController@store')->name('course.insert');
+
+Route::get('/studymoment/add','StudymomentController@create')->name('add_studymoment');
 
 Route::get('/user', 'UserController@index')->name('user');
 

@@ -39,7 +39,7 @@
                                 </div>
                             <div class="mr-10">Add Course</div>
                             </div>
-                            <a class="card-footer text-white clearfix z-1" href="{{ route('add_course') }}">
+                            <a class="card-footer text-white clearfix z-1" href="{{ route('course.create') }}">
                                 <span class="float-left">View Details</span>
                                 <span class="float-right">
                                     <i class="fa fa-angle-right "></i>
