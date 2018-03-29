@@ -53,14 +53,14 @@
                                 </a>
 
                                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="{{ route('profile') }}"
+                                    <a class="dropdown-item" href="{{ route('user') }}"
                                        onclick="profile">
                                         {{ __('Profile') }}
                                     </a>
-                                    <form id="profile-form" action="{{ route('profile') }}" method="POST" style="display: none;">
+                                    <form id="profile-form" action="{{ route('user') }}" method="POST" style="display: none;">
                                         @csrf
                                     </form>
-                                    <a class="dropdown-item" href="{{ route('logout') }}"
+                                    <a class="dropdown-item" href="/edit/{{ route('logout') }}"
                                        onclick="logoutFunc()">
                                         {{ __('Logout') }}
                                     </a>

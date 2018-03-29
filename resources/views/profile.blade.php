@@ -14,11 +14,11 @@
                         <tbody>
                           <tr>
                             <td>Name:</td>
-                            <td>Yanice Slegers</td>
+                            <td>{{__($user['name']) }} </td>
                           </tr>
                           <tr>
                             <td>E-mail:</td>
-                            <td>yaniceslegers@gmail.com</td>
+                            <td>{{__($user['email']) }}</td>
                           </tr>
                           <tr>
                             <td>Number of courses</td>
@@ -32,7 +32,7 @@
                       </table>
                       <div class="row">
                       <div class="col-2 ml-4 mb-4">
-                      <form id="logout-form" action="" method="POST">
+                      <form id="logout-form" action="/user/edit/{{ $user['id'] }}" method="POST">
                        @csrf
                             <button type="submit" class="btn btn-primary">
                               <i class="fa fa-edit"> </i>{{ __('Edit') }}
