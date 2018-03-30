@@ -22,7 +22,7 @@
                                 </div>
                             <div class="mr-10">Add Studymoment</div>
                             </div>
-                            <a class="card-footer text-white clearfix z-1" href="{{ route('add_studymoment') }}">
+                            <a class="card-footer text-white clearfix z-1" href="{{ route('studymoment.create') }}">
                                 <span class="float-left">View Details</span>
                                 <span class="float-right">
                                     <i class="fa fa-angle-right "></i>

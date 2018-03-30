@@ -19,7 +19,7 @@ Route::get('/course/add', 'CourseController@create')->name('course.create');;
 
 Route::post('Course/insert', 'CourseController@store')->name('course.insert');
 
-Route::get('/studymoment/add','StudymomentController@create')->name('add_studymoment');
+Route::get('/studymoment/add','StudymomentController@create')->name('studymoment.create');
 
 Route::get('/user', 'UserController@index')->name('user');
 
