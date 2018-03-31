@@ -17,6 +17,8 @@ class Studymoments extends Migration
             $table->increments('id');
             $table->integer('user_id');
             $table->integer('course_id');
+            $table->date('date');
+            $table->time('duration');	
             $table->boolean('in_class');
         });
     }

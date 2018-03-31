@@ -50,7 +50,7 @@ class CourseController extends Controller
              'studypoints' => $request['studypoints']
              ]
         );
-        DB::table('user_enrolled_at')->insertGetId(
+        DB::table('user_enrolled_at')->insert(
             [
                 'user_id' => Auth::id(),
                 'course_id' => $id, 

@@ -2,8 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Course;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
+
 class StudymomentController extends Controller
 {
     public function __construct()
@@ -17,7 +20,7 @@ class StudymomentController extends Controller
      */
     public function index()
     {
-        //
+        return view('home');
     }
 
     /**
@@ -27,7 +30,8 @@ class StudymomentController extends Controller
      */
     public function create()
     {
-        return view('studymoment');
+        $courses = Course::all();
+        return view('studymoment',compact('courses'));
     }
 
     /**
@@ -38,7 +42,17 @@ class StudymomentController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
+         DB::table('studymoments')->insert(
+            [
+            'user_id' => Auth::id(),
+            'course_id' => $request['course_id'],
+            'date' => $request['date'],
+            'duration' => $request['duration'],	
+            'in_class' => $request['in_class']
+            ]
+            );
+        return $this->index();
     }
 
     /**

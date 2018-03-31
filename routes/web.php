@@ -21,6 +21,8 @@ Route::post('Course/insert', 'CourseController@store')->name('course.insert');
 
 Route::get('/studymoment/add','StudymomentController@create')->name('studymoment.create');
 
+Route::post('Course/insert', 'StudymomentController@store')->name('studymoment.insert');
+
 Route::get('/user', 'UserController@index')->name('user');
 
 Route::post('/user/{id}', 'UserController@index');

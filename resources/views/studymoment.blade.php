@@ -8,12 +8,12 @@
                 <div class="card-header">Add Studymoment</div>
 
                 <div class="card-body">
-                <form method="POST" action="">
+                <form method="post" action="{{ route('studymoment.insert') }}">
                         @csrf
                         <div class="form-group row">
-                            <label for="time" class="col-md-4 col-form-label text-md-right">{{ __('Study time') }}</label>
+                            <label for="duration" class="col-md-4 col-form-label text-md-right">{{ __('Study time') }}</label>
                             <div class="col-md-6">
-                                <input id="time" type="time" class="form-control{{ $errors->has('time') ? ' is-invalid' : '' }}" name="time" value="{{ old('time') }}" required autofocus>
+                                <input id="duration" type="time" class="form-control{{ $errors->has('duration') ? ' is-invalid' : '' }}" name="duration" value="{{ old('duration') }}" required autofocus>
 
                                 @if ($errors->has('time'))
                                     <span class="invalid-feedback">
@@ -38,16 +38,18 @@
                         <div class="form-group row">
                             <label for="course" class="col-md-4 col-form-label text-md-right">{{ __('Course') }}</label>
                             <div class="col-md-6">
-                                <select class="form-control">
-                                    <option value="2">2</option>
+                                <select class="form-control" name="course_id">
+                                    @foreach($courses as $course)
+                                        <option value="{{ $course->id }}"> {{ $course->name}}</option>
+                                    @endforeach
                                 </select>
                             </div>
                         </div>
 
                         <div class="form-group row">
-                            <label for="lesson" class="col-md-4 col-form-label text-md-right">{{ __('Lesson?') }}</label>
+                            <label for="in_class" class="col-md-4 col-form-label text-md-right">{{ __('Lesson?') }}</label>
                             <div class="col-md-6">
-                                <select class="form-control">
+                                <select class="form-control" name="in_class">
                                     <option value="1">Yes</option>
                                     <option value="0">No</option>
 
