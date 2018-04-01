@@ -15,15 +15,11 @@ class Course extends Migration
     {
         Schema::create('courses', function (Blueprint $table) {
             $table->increments('id');
+            $table->integer('user_id');
             $table->string('name',50);
             $table->string('semester',1);
             $table->integer('studypoints');
             $table->boolean('visible');
-        });
-
-        Schema::create('user_enrolled_at',function(Blueprint $table){
-            $table->integer('user_id');
-            $table->integer('course_id');
         });
     }
 
@@ -35,6 +31,5 @@ class Course extends Migration
     public function down()
     {
         Schema::dropIfExists('courses');
-        Schema::dropIfExists('user_enrolled_at');
     }
 }

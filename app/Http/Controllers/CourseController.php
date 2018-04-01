@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Course;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
@@ -20,8 +21,11 @@ class CourseController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {
-        return view('home');
+    {   
+        $courses=  DB::table('courses')
+                ->where('user_id', '=', Auth::id())
+                ->get();
+        return view('course_overview',compact('courses'));
     }
 
     /**
@@ -45,16 +49,11 @@ class CourseController extends Controller
         $id = DB::table('courses')->insertGetId(
             [
              'name' => $request['name'],
+             'user_id' => Auth::id(),
              'semester' => $request['semester'],
              'visible' => 1,             
              'studypoints' => $request['studypoints']
              ]
-        );
-        DB::table('user_enrolled_at')->insert(
-            [
-                'user_id' => Auth::id(),
-                'course_id' => $id, 
-            ]
         );
         return $this->index();
     }

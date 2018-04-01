@@ -8,7 +8,7 @@
                 <div class="card-header">Enroll course</div>
 
                 <div class="card-body">
-                <form method="post" action="{{ route('course.insert') }}">
+                <form method="post" action="{{ route('course.store') }}">
                         @csrf
                         <div class="form-group row">
                             <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Course name') }}</label>

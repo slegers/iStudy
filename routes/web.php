@@ -17,7 +17,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/course/add', 'CourseController@create')->name('course.create');;
 
-Route::post('Course/insert', 'CourseController@store')->name('course.insert');
+Route::post('Course/insert', 'CourseController@store')->name('course.store');
 
 Route::get('Course/overview', 'CourseController@index')->name('course.index');
 
@@ -25,7 +25,7 @@ Route::get('/studymoment/add','StudymomentController@create')->name('studymoment
 
 Route::get('studymoment/overview', 'StudymomentController@index')->name('studymoment.index');
 
-Route::post('Course/insert', 'StudymomentController@store')->name('studymoment.insert');
+Route::post('studymoment/insert', 'StudymomentController@store')->name('studymoment.insert');
 
 Route::get('/user', 'UserController@index')->name('user');
 

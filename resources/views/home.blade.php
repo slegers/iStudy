@@ -86,6 +86,15 @@
                 </div>
             </div>
         </div>
+     <!--   <div class="col-md-3">
+            <div class="card">
+                <div class="card-header">Overview</div>
+                    <div class="card-body">
+                        <h2>Hours study</h2>
+                    </div>
+            </div>
+        </div>
+    -->
     </div>
 </div>
 @endsection
