@@ -57,7 +57,7 @@
                                 </div>
                             <div class="mr-10">Show Studymoments</div>
                             </div>
-                            <a class="card-footer text-white clearfix z-1" href="#">
+                            <a class="card-footer text-white clearfix z-1" href="{{ route('studymoment.index') }}">
                                 <span class="float-left">View Details</span>
                                 <span class="float-right">
                                     <i class="fa fa-angle-right "></i>
@@ -74,7 +74,7 @@
                                 </div>
                             <div class="mr-10">Show Courses</div>
                             </div>
-                            <a class="card-footer text-white clearfix z-1" href="#">
+                            <a class="card-footer text-white clearfix z-1" href="{{ route('course.index') }}">
                                 <span class="float-left">View Details</span>
                                 <span class="float-right">
                                     <i class="fa fa-angle-right "></i>

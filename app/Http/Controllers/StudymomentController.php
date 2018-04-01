@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Studymoment;
 use App\Course;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -20,7 +21,9 @@ class StudymomentController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $studymoments = Studymoment::all();
+        $courses = Course::all();
+        return view('sm_overview',compact('studymoments','courses'));
     }
 
     /**
@@ -42,7 +45,6 @@ class StudymomentController extends Controller
      */
     public function store(Request $request)
     {
-
          DB::table('studymoments')->insert(
             [
             'user_id' => Auth::id(),
