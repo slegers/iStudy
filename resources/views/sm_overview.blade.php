@@ -17,12 +17,12 @@
                      </tr>
                 </thead>
                 <tbody>
-                @foreach($studymoments as $key)
+                @foreach($studymoments as $s)
                     <tr>
-                        <td><?= $key->id ?></td>
-                        <td><?=$courses[$key->course_id]->name?></td>
-                        <td><?=  $key->duration ?></td>
-                        <td><?= $key->date ?></td>
+                        <td> {{ $s->id }}</td>
+                        <td> {{ $courses[$s->course_id]->name }}</td>
+                        <td> {{ $s->duration }}</td>
+                        <td> {{ $s->date  }} </td>
                     </tr>
                 @endforeach
                 </tbody>

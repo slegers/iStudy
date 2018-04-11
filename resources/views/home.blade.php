@@ -87,11 +87,19 @@
             </div>
         </div>
         <div class="col-md-3">
-            <div class="card">
+            <div class="card mb-5">
                 <div class="card-header">Self Study</div>
                     <div class="card-body">
                     <center>
-                        <div id="study-time">01:00</div>
+                        <div id="study-time">{{ $self_study }}</div>
+                    </center>
+                    </div>
+            </div>
+            <div class="card col-mb-3">
+                <div class="card-header">Courses Study</div>
+                    <div class="card-body">
+                    <center>
+                        <div id="study-time"> {{ $les }}</div>
                     </center>
                     </div>
             </div>

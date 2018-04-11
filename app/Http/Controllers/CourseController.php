@@ -55,7 +55,7 @@ class CourseController extends Controller
              'studypoints' => $request['studypoints']
              ]
         );
-        return $this->index();
+        return redirect()->route('course.index');
     }
 
     /**

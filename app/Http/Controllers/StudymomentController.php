@@ -22,10 +22,17 @@ class StudymomentController extends Controller
     public function index()
     {
         $studymoments = Studymoment::all();
-        $courses = Course::all();
+        $courses = $this->get_courses();
+        
         return view('sm_overview',compact('studymoments','courses'));
     }
-
+    public function get_courses(){
+        $array = array();
+        foreach(db::table('courses')->get() as $key => $c){
+            $array[$c->id] = $c;
+        }
+        return $array;
+    }
     /**
      * Show the form for creating a new resource.
      *
@@ -54,7 +61,8 @@ class StudymomentController extends Controller
             'in_class' => $request['in_class']
             ]
             );
-        return $this->index();
+        return redirect()->route('studymoment.index');
+
     }
 
     /**
