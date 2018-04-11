@@ -13,7 +13,7 @@
                             {{ session('status') }}
                         </div>
                     @endif
-                    <div class="row">
+                    <div class="row mt-4 mb-4">
                         <div class="col-xl-6 mb-3">
                             <div class="card text-white bg-red o-hidden h-100">
                             <div class="card-body">
@@ -86,15 +86,16 @@
                 </div>
             </div>
         </div>
-     <!--   <div class="col-md-3">
+        <div class="col-md-3">
             <div class="card">
-                <div class="card-header">Overview</div>
+                <div class="card-header">Self Study</div>
                     <div class="card-body">
-                        <h2>Hours study</h2>
+                    <center>
+                        <div id="study-time">01:00</div>
+                    </center>
                     </div>
             </div>
         </div>
-    -->
     </div>
 </div>
 @endsection
