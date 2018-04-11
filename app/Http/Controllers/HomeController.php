@@ -24,15 +24,20 @@ class HomeController extends Controller
      */
     public function index()
     {   
-        $self_study = $this->calculate_lesson_time('0');
-        $les = $this->calculate_lesson_time('1');
+        $self_study = $this->calculate_lesson_time(false);
+        $les = $this->calculate_lesson_time(true);
         return view('home',compact('self_study','les'));
     }
 
     private function calculate_lesson_time($les){
         $date = date("Y-m-d",strtotime("-1 week"));
+        $r = DB::table('studymoments')
+            ->where('in_class', $les)
+            ->where('date','>=',$date)
+            ->sum('duration');
+       
         //$r = DB::select(DB::raw("SELECT SEC_TO_TIME(SUM(TIME_TO_SEC(`duration`))) as duration from studymoments where datum like :date and les = $les;"),array('date'=> $date));
-        return '1:00';
+        return $r;
     }
      /**;
     *   @return Returns an array with the number of hours per cours.
