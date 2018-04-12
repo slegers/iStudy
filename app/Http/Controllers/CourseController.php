@@ -66,7 +66,7 @@ class CourseController extends Controller
      */
     public function show($id)
     {
-    
+        
     }
 
     /**
@@ -100,6 +100,8 @@ class CourseController extends Controller
      */
     public function destroy($id)
     {
-        
+        DB::table('courses')
+        ->where('id',$id)
+        ->delete();
     }
 }

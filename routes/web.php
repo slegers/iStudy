@@ -23,6 +23,9 @@ Route::get('Course/overview', 'CourseController@index')->name('course.index');
 
 Route::get('/studymoment/add','StudymomentController@create')->name('studymoment.create');
 
+Route::get('/summary','HomeController@summary')->name('home.summary');
+
+
 Route::get('studymoment/overview', 'StudymomentController@index')->name('studymoment.index');
 
 Route::post('studymoment/insert', 'StudymomentController@store')->name('studymoment.insert');

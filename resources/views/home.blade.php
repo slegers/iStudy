@@ -90,9 +90,9 @@
                                 <div class="card-body-icon">
                                 <i class="fa fa-eye" aria-hidden="true"></i>
                                 </div>
-                            <div class="mr-10">Overview</div>
+                            <div class="mr-10">Summary</div>
                             </div>
-                            <a class="card-footer text-white clearfix z-1" href="{{ route('studymoment.index') }}">
+                            <a class="card-footer text-white clearfix z-1" href="{{ route('home.summary') }}">
                                 <span class="float-left">View Details</span>
                                 <span class="float-right">
                                     <i class="fa fa-angle-right "></i>
@@ -105,6 +105,14 @@
             </div>
         </div>
         <div class="col-md-3">
+            <div class="card mb-4">
+                <div class="card-header">Today</div>
+                    <div class="card-body">
+                    <center>
+                        <div id="study-time">{{ $self_study }}</div>
+                    </center>
+                    </div>
+            </div>
             <div class="card mb-4">
                 <div class="card-header">Self Study</div>
                     <div class="card-body">
