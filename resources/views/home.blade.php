@@ -83,11 +83,29 @@
                             </div>
                         </div>
                     </div>
+                    <div class="row">
+                        <div class="col-xl-6 mb-3">
+                            <div class="card text-white bg-purple o-hidden h-100">
+                            <div class="card-body">
+                                <div class="card-body-icon">
+                                <i class="fa fa-eye" aria-hidden="true"></i>
+                                </div>
+                            <div class="mr-10">Overview</div>
+                            </div>
+                            <a class="card-footer text-white clearfix z-1" href="{{ route('studymoment.index') }}">
+                                <span class="float-left">View Details</span>
+                                <span class="float-right">
+                                    <i class="fa fa-angle-right "></i>
+                                </span>
+                            </a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
         <div class="col-md-3">
-            <div class="card mb-5">
+            <div class="card mb-4">
                 <div class="card-header">Self Study</div>
                     <div class="card-body">
                     <center>
@@ -95,11 +113,19 @@
                     </center>
                     </div>
             </div>
-            <div class="card col-mb-3">
+            <div class="card mb-4">
                 <div class="card-header">Courses Study</div>
                     <div class="card-body">
                     <center>
                         <div id="study-time"> {{ $les }}</div>
+                    </center>
+                    </div>
+            </div>
+            <div class="card mb-4">
+                <div class="card-header">Previous Week</div>
+                    <div class="card-body">
+                    <center>
+                        <div id="study-time"> {{ $previous_week }}</div>
                     </center>
                     </div>
             </div>
