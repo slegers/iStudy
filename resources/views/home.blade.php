@@ -109,7 +109,7 @@
                 <div class="card-header">Today</div>
                     <div class="card-body">
                     <center>
-                        <div id="study-time">{{ $self_study }}</div>
+                        <div id="study-time">{{ $today }}</div>
                     </center>
                     </div>
             </div>

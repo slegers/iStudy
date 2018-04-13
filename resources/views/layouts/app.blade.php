@@ -10,19 +10,20 @@
 
     <title>{{ config('app.name', 'iStudy') }}</title>
     <!-- Fonts -->
-
     <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,600" rel="stylesheet" type="text/css">
     <script src="https://use.fontawesome.com/d32fa89cc2.js"></script>
 
     <!-- Styles -->
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-    <link href="{{ asset('css/style.css') }}" rel="stylesheet">
+   
     
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
     <script src="{{ asset('js/istudy.js') }}" defer></script>
-    <script src="{{ asset('js/chart.js') }}" defer></script>
+    <script src="{{ asset('js/Chart.bundle.js') }}" defer></script>
+    <script src="{{ asset('js/Chart.js') }}" defer></script>
 
+     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/style.css') }}" rel="stylesheet">
 </head>
 <body>
     <div id="app">

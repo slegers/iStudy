@@ -8,9 +8,14 @@
                 <div class="card-header">Summary</div>
 
                 <div class="card-body">
-                   
-                    <canvas id="pieChart"/>
-
+                    <div class=canvas-card>
+                        <div class="canvas-title">Databaken 2 </div>
+                        <canvas id="pieChart"></canvas>
+                    </div>
+                    <div class=canvas-card>
+                        <div class="canvas-title">Databaken 2 </div>
+                        <canvas class="pieChart2"></canvas>
+                    </div>
                 </div>
             </div>
         </div>

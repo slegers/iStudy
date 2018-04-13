@@ -27,7 +27,8 @@ class HomeController extends Controller
         $self_study = $this->calculate_lesson_time(false,'>=');
         $les = $this->calculate_lesson_time(true,'>=');
         $previous_week = $this->calculate_lesson_time(true,'=');
-        return view('home',compact('self_study','les','previous_week'));
+        $today = $this->calculate_study_time_today();
+        return view('home',compact('self_study','les','previous_week','today'));
     }
 
     private function calculate_lesson_time($les, $when){
@@ -35,6 +36,15 @@ class HomeController extends Controller
         $r = DB::table('studymoments')
             ->where('in_class', $les)
             ->where('date',$when, $date)
+            ->where('user_id',Auth::id())
+            ->sum('duration');
+        return $r;
+    }
+
+    private function calculate_study_time_today(){
+        $date = date("Y-m-d");
+        $r = DB::table('studymoments')
+            ->where('date', $date)
             ->where('user_id',Auth::id())
             ->sum('duration');
         return $r;
