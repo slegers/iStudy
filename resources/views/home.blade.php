@@ -114,7 +114,7 @@
                     </div>
             </div>
             <div class="card mb-4">
-                <div class="card-header">Self Study</div>
+                <div class="card-header">Self Study (Week)</div>
                     <div class="card-body">
                     <center>
                         <div id="study-time">{{ $self_study }}</div>
@@ -122,7 +122,7 @@
                     </div>
             </div>
             <div class="card mb-4">
-                <div class="card-header">Courses Study</div>
+                <div class="card-header">Courses Study (Week)</div>
                     <div class="card-body">
                     <center>
                         <div id="study-time"> {{ $les }}</div>

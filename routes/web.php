@@ -25,6 +25,7 @@ Route::get('/studymoment/add','StudymomentController@create')->name('studymoment
 
 Route::get('/summary','HomeController@summary')->name('home.summary');
 
+Route::get('/summary/data','HomeController@get_summary_data');
 
 Route::get('studymoment/overview', 'StudymomentController@index')->name('studymoment.index');
 

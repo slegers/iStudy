@@ -38,3 +38,7 @@
     background-color:red;
     border-color:red;
 }
+
+.canvas-card {
+    height: 100px;
+}

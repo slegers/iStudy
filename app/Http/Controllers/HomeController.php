@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Course;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
@@ -51,6 +52,28 @@ class HomeController extends Controller
     }
      
     public function summary(){
-        return view('summary');
+        $courses = Course::all();
+        return view('summary',compact('courses'));
+    }
+
+    public function get_summary_data(){
+        $courses = Course::all();
+        $data = array();
+        for($i = 0; $i < $courses->count();$i++){
+            $data[$i]['id'] = $courses[$i]->id;
+            $data[$i]['home'] = strtotime($this->calculate_time_cours($courses[$i]->id, false));
+            $data[$i]['school'] = strtotime($this->calculate_time_cours($courses[$i]->id, true));
+        }
+        return json_encode($data);
+    }
+
+    private function calculate_time_cours($course_id,$les){
+        $date = date("Y-m-d",strtotime("-1 week"));
+        $r = DB::table('studymoments')
+            ->where('in_class', $les)
+            ->where('course_id', $course_id)
+            ->where('user_id',Auth::id())
+            ->sum('duration');
+        return $r;
     }
 }
