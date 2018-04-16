@@ -21,7 +21,7 @@ class StudymomentController extends Controller
      */
     public function index()
     {
-        $studymoments = Studymoment::all();
+        $studymoments = Studymoment::limit(10)->orderBy('id', 'desc')->get();
         $courses = $this->get_courses();
         
         return view('sm_overview',compact('studymoments','courses'));
