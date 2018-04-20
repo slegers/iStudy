@@ -61,8 +61,8 @@ class HomeController extends Controller
         $data = array();
         for($i = 0; $i < $courses->count();$i++){
             $data[$i]['id'] = $courses[$i]->id;
-            $data[$i]['home'] = strtotime($this->calculate_time_cours($courses[$i]->id, false));
-            $data[$i]['school'] = strtotime($this->calculate_time_cours($courses[$i]->id, true));
+            $data[$i]['home'] = $this->calculate_time_cours($courses[$i]->id, false);
+            $data[$i]['school'] = $this->calculate_time_cours($courses[$i]->id, true);
         }
         return json_encode($data);
     }
@@ -74,6 +74,16 @@ class HomeController extends Controller
             ->where('course_id', $course_id)
             ->where('user_id',Auth::id())
             ->sum('duration');
-        return $r;
+        
+
+       
+        return $this->calculate_time($r);
+    }
+
+    private function calculate_time($r){
+        if(strlen($r) > 8){
+            return  $h = substr($r,0,strlen($r)-6) +substr($r,-5,2)/60;
+        }
+        return $h = substr($r,0,2) + substr($r,-5,2)/60;
     }
 }

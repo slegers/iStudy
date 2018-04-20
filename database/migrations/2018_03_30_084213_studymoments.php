@@ -31,6 +31,5 @@ class Studymoments extends Migration
     public function down()
     {
         Schema::dropIfExists('studymoments');
-
     }
 }
